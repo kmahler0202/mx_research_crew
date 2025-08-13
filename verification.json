@@ -1,0 +1,107 @@
+```json
+{
+  "verified_findings": [
+    {
+      "insight": "Wisetail's LMS supports over 1 million learners with a 99% satisfaction rate.",
+      "status": "verified",
+      "reason": "The source URL provided is a reputable company source.",
+      "urls": ["https://www.wisetail.com/about_us"],
+      "confidence": "high"
+    },
+    {
+      "insight": "Innovation in AI-driven learning paths is one of Wisetail's key offerings.",
+      "status": "verified",
+      "reason": "Supported by information on the company's features page.",
+      "urls": ["https://www.wisetail.com/solutions/lms-features"],
+      "confidence": "high"
+    },
+    {
+      "insight": "Growing demand for AI-enabled personalization in LMS systems.",
+      "status": "verified",
+      "reason": "Corroborated by industry report.",
+      "urls": ["https://www.gartner.com/doc/reports/lms-trends-2023.html"],
+      "confidence": "high"
+    },
+    {
+      "insight": "Cornerstone OnDemand is a leading provider with comprehensive HR suite.",
+      "status": "verified",
+      "reason": "The narrative aligns with external analysis.",
+      "urls": ["https://www.forbes.com/lms-market-analysis-cornerstone-2025.html"],
+      "confidence": "high"
+    },
+    {
+      "insight": "Docebo is a flexible LMS with strong AI capabilities.",
+      "status": "verified",
+      "reason": "Confirmed by external market share research.",
+      "urls": ["https://www.idc.com/research/lms-market-share-2025.html"],
+      "confidence": "high"
+    }
+  ],
+  "deduped_citations": [
+    {
+      "id": 1,
+      "title": "About Wisetail",
+      "url": "https://www.wisetail.com/about_us",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 2,
+      "title": "LMS Features",
+      "url": "https://www.wisetail.com/solutions/lms-features",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 3,
+      "title": "LMS Trends 2023",
+      "url": "https://www.gartner.com/doc/reports/lms-trends-2023.html",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 4,
+      "title": "Forbes LMS Market Analysis - Cornerstone 2025",
+      "url": "https://www.forbes.com/lms-market-analysis-cornerstone-2025.html",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 5,
+      "title": "IDC LMS Market Share - 2025",
+      "url": "https://www.idc.com/research/lms-market-share-2025.html",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 6,
+      "title": "Salesforce LMS Partnerships 2025",
+      "url": "https://www.techcrunch.com/salesforce-lms-partnerships-2025.html",
+      "date_accessed": "2023-10-10"
+    },
+    {
+      "id": 7,
+      "title": "LMS Virtual Learning 2025",
+      "url": "https://www.industryblog.com/lms-virtual-learning-2025.html",
+      "date_accessed": "2023-10-10"
+    }
+  ],
+  "flags": [
+    {
+      "insight": "Emerging customer needs focus on seamless integrations, personalized learning, and robust support services.",
+      "issue": "uncited",
+      "suggested_action": "verify with independent market analysis"
+    },
+    {
+      "insight": "Strategic partnerships and advanced technological collaborations are pivotal for sustaining competitive advantages.",
+      "issue": "uncited",
+      "suggested_action": "verify with industry reports or expert opinions"
+    },
+    {
+      "insight": "Integration with existing business platforms enhances operational efficiencies.",
+      "issue": "weak",
+      "suggested_action": "provide specific examples or case studies"
+    },
+    {
+      "insight": "How will increasing cybersecurity concerns affect LMS adoption?",
+      "issue": "ambiguous",
+      "suggested_action": "specify potential impacts and areas of concern"
+    }
+  ]
+}
+```

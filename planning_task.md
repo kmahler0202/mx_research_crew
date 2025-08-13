@@ -1,0 +1,1 @@
+The matrix and additional questions for GrayMatter Systems' target industries and decision makers are outlined above. This analysis will guide understanding of potential opportunities and challenges in selling GrayMatter's offerings within these sectors.

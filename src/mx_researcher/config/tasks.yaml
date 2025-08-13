@@ -1,0 +1,48 @@
+planning_task:
+  description: >
+    Determine which industries and market segments are most likely to buy this product for the company {company}. Within each industry and market segment,
+    what decision makers and decision influencers, most likely defined by Title or Role, are most significant in the buying process for this product.
+    Determine this by visiting the company’s website, as well as the competitors websites, and determine if they have pre-existing industries and personas defined, and if so, documenting those,
+    in addition look at any trade associations and trade conferences to try and understand if they break out different industries and roles and titles, as well as look at LinkedIn Groups that are specific to the product or the product category.
+  expected_output: >
+    A matrix that has industries on one axis and decision makers and decision influencers on the other axis. Additionally, make a list of questions that may not fit into this matrix but you still feel are important.
+  agent: planner
+
+research_task:
+  description: >
+    For each decision-maker role identified in the planner's output matrix, conduct in-depth qualitative research. The research you are conducting this for is {company}
+    Uncover their primary **Pain Points** (what challenges do they face?), **Goals** (what outcomes are they responsible for?), and **Watering Holes** (what blogs, forums, influencers, or publications do they trust?).
+    Gather direct quotes and specific examples from sources like LinkedIn, Reddit, industry forums, and product review sites.
+  expected_output: >
+    A detailed dossier for each decision-maker profile. Each dossier must contain sections for:
+    1. Key Responsibilities & Professional Goals.
+    2. Top 3-5 Pain Points & Challenges.
+    3. Primary Information Sources (Watering Holes).
+    4. At least two direct quotes revealing their perspective, with source URLs.
+  agent: researcher
+
+synthesis_task:
+  description: >
+    Review all the persona dossiers from the researcher. Synthesize this information into 2-4 final, unified Buyer Persona profiles.
+    Then, for each persona, map out their typical Buyer Journey across three key stages: **Awareness** (how they realize they have a problem), **Consideration** (how they research and compare solutions), and **Decision** (what criteria they use to make a final choice).
+    For each stage, define the key questions the persona is asking.
+  expected_output: >
+    A comprehensive document containing:
+    1. A final, polished profile for each Buyer Persona, including their role, goals, and pains.
+    2. A detailed Buyer Journey Map for each persona, outlining the Awareness, Consideration, and Decision stages and the key questions they ask at each stage.
+  agent: synthesizer
+
+reporting_task:
+  description: >
+    Using the finalized Buyer Persona profiles and Buyer Journey Maps, create a comprehensive and actionable marketing strategy report.
+    For each journey map, provide specific and creative content recommendations for each stage.
+    For example: 'For the Awareness stage of the Technical User, recommend a blog post titled "5 Signs Your Current Data Pipeline is Inefficient."'
+    Or 'For the Decision stage of the Financial Buyer, recommend a "Customizable ROI Calculator."'
+  expected_output: >
+    A client-ready, polished Markdown report saved to 'buyer_persona_and_journey_report.md'.
+    The report must contain:
+    1. An Executive Summary.
+    2. A detailed section for each Buyer Persona.
+    3. A section for each Buyer Journey Map, complete with actionable content recommendations for every stage.
+  agent: writer
+  output_file: buyer_persona_and_journey_report.md
