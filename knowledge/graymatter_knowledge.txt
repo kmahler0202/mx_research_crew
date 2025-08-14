@@ -1,0 +1,26 @@
+Products/Services:
+-Industrial and Process Automation Services
+-Plant Automation Systems Integration
+-Plant floor to C-suite data Integration
+
+Industries:
+-Category - Process Industries
+-Food and Beverage
+-Oil and Gas
+-Pulp and Paper
+-Water and Waste Water
+-Chemical
+-Pharmaceutical
+
+Decision Makers and Decision Influencers:
+-VP Plant Engineering
+-Director of Plant Engineering
+-Plant or Systems Engineering
+-Chief Technology Officer
+
+Watering Holes:
+- Major Trade Associations
+- Shows
+- Websites
+- Conferences
+- LinkedIn Groups

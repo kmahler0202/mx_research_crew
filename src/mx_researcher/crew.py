@@ -4,14 +4,35 @@ from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from dotenv import load_dotenv
 load_dotenv()
+from langchain_openai import ChatOpenAI
 from crewai_tools import (
     SerperDevTool
 )
+from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
+import os
+
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-search_tool = SerperDevTool() 
+
+
+llm = ChatOpenAI(
+    model=os.getenv('MODEL'),
+    api_key=os.getenv('OPENAI_API_KEY'),
+    temperature=0.7,
+    max_completion_tokens=15000
+)
+
+search_tool = SerperDevTool()
+
+specialist_knowledge = TextFileKnowledgeSource(
+    file_paths=['graymatter_knowledge.txt']
+)
+
+strategy_knowledge = TextFileKnowledgeSource(
+    file_paths=['strategies.txt']
+)
 
 @CrewBase
 class MxResearcher():
@@ -35,7 +56,9 @@ class MxResearcher():
         return Agent(
             config=self.agents_config['planner'], # type: ignore[index]
             tools=[search_tool],
-            verbose=True
+            verbose=True,
+            llm=llm,
+            knowledge_sources=[specialist_knowledge]
         )
 
     
@@ -44,21 +67,26 @@ class MxResearcher():
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
             tools=[search_tool],
-            verbose=True
+            verbose=True,
+            llm=llm,
+            knowledge_sources=[strategy_knowledge]
         )
 
     @agent
     def synthesizer(self) -> Agent:
         return Agent(
             config=self.agents_config['synthesizer'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            llm=llm,
+            knowledge_sources=[strategy_knowledge]
         )
 
     @agent
     def writer(self) -> Agent:
         return Agent(
             config=self.agents_config['writer'], # type: ignore[index]
-            verbose=True
+            verbose=True,
+            llm=llm    
         )
 
     # To learn more about structured task outputs,

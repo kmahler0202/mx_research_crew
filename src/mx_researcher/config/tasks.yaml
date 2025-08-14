@@ -10,39 +10,124 @@ planning_task:
 
 research_task:
   description: >
-    For each decision-maker role identified in the planner's output matrix, conduct in-depth qualitative research. The research you are conducting this for is {company}
-    Uncover their primary **Pain Points** (what challenges do they face?), **Goals** (what outcomes are they responsible for?), and **Watering Holes** (what blogs, forums, influencers, or publications do they trust?).
-    Gather direct quotes and specific examples from sources like LinkedIn, Reddit, industry forums, and product review sites.
+    Choose three of the decision-maker roles identified in the planner's output matrix, conduct comprehensive, qualitative research for {company}. The three you choose should each be in different industries
+    Your goal is to deeply understand their professional profile, priorities, and buying behavior.
+
+    For each role, research:
+    - **Core Responsibilities & Professional Goals**: What outcomes are they responsible for?
+    - **Pain Points & Challenges**: What obstacles make their job harder?
+    - **Decision Criteria**: What factors do they evaluate when considering a solution?
+    - **Perceived Barriers**: What would prevent them from choosing a product like {company}'s?
+    - **Media Habits**: How and where do they consume information? (social media, blogs, podcasts, etc.)
+    - **Sources of Influence**: Which influencers, peers, analysts, or publications shape their thinking?
+    - **Preferred Communication Methods**: Email, calls, LinkedIn, in-person, etc.
+    - **Preferred Content Types**: Blogs, whitepapers, videos, webinars, calculators, etc.
+    - **Buyer Journey Stage Questions**: 
+        - Awareness: How do they recognize a problem?
+        - Consideration: How do they compare solutions?
+        - Decision: How do they finalize a choice?
+    - **Watering Holes**: Blogs, forums, or industry-specific resources they trust.
+
+    Use credible sources such as LinkedIn, industry reports, conference agendas, Reddit, product review sites, and trade association content.
+    Always include at least 2 direct quotes per persona from credible sources, with full URLs.
   expected_output: >
-    A detailed dossier for each decision-maker profile. Each dossier must contain sections for:
-    1. Key Responsibilities & Professional Goals.
-    2. Top 3-5 Pain Points & Challenges.
-    3. Primary Information Sources (Watering Holes).
-    4. At least two direct quotes revealing their perspective, with source URLs.
+    A structured dossier for each decision-maker profile, containing:
+
+    1. **Core Persona Information**
+       - Title/Role
+       - Industry
+       - Key Responsibilities & Goals
+       - Media Habits
+       - Sources of Influence
+       - Preferred Communication Methods
+       - Preferred Content Types
+    2. **Product/Persona Connection**
+       - Top 3–5 Pain Points & Challenges
+       - Priority Initiatives
+       - Success Factors
+       - Perceived Barriers
+       - Decision Criteria
+    3. **Buyer Journey Questions**
+       - Awareness stage questions
+       - Consideration stage questions
+       - Decision stage questions
+    4. **Watering Holes**
+       - Specific sites, publications, communities, influencers
+    5. **Direct Quotes**
+       - At least two, with URLs
   agent: researcher
 
 synthesis_task:
   description: >
-    Review all the persona dossiers from the researcher. Synthesize this information into 2-4 final, unified Buyer Persona profiles.
-    Then, for each persona, map out their typical Buyer Journey across three key stages: **Awareness** (how they realize they have a problem), **Consideration** (how they research and compare solutions), and **Decision** (what criteria they use to make a final choice).
-    For each stage, define the key questions the persona is asking.
+    Review all persona dossiers from the researcher. Your goal is to synthesize them into a small, actionable set of **final Buyer Persona profiles**
+    that will be directly usable for creating the marketing strategy report.
+
+    For each final persona:
+    1. Merge similar roles or titles from the research into one unified profile.
+    2. Preserve key factual details while improving clarity, tone, and completeness.
+    3. Ensure each profile has all sections required for the reporting task's "Core Persona Information" and "Product/Persona Connection" categories.
+    4. For each persona, create a Buyer Journey Map covering:
+       - **Awareness**: What triggers them to recognize a need? Include key questions.
+       - **Consideration**: How do they compare solutions? Include key questions.
+       - **Decision**: How do they make their final selection? Include key questions.
+    5. Ensure journey maps align with their pain points, goals, and decision criteria.
+
+    This synthesis must be consistent in structure so the writer can drop it directly into the final report.
   expected_output: >
-    A comprehensive document containing:
-    1. A final, polished profile for each Buyer Persona, including their role, goals, and pains.
-    2. A detailed Buyer Journey Map for each persona, outlining the Awareness, Consideration, and Decision stages and the key questions they ask at each stage.
+      A unified Buyer Persona package containing:
+
+      1. **Final Persona Profiles**
+        - Role/Title & Industry
+        - Media Habits
+        - Sources of Influence
+        - Preferred Communication Methods
+        - Preferred Content Types
+        - Pain Points & Challenges
+        - Goals & Priority Initiatives
+        - Success Factors
+        - Perceived Barriers
+        - Decision Criteria
+      2. **Buyer Journey Maps**
+        - Awareness: description + key questions
+        - Consideration: description + key questions
+        - Decision: description + key questions
+      3. **Mapped Watering Holes**
+        - For quick reference
   agent: synthesizer
 
 reporting_task:
   description: >
     Using the finalized Buyer Persona profiles and Buyer Journey Maps, create a comprehensive and actionable marketing strategy report.
+    For each persona, create 4 main sections that describe the Persona Information, Product/Persona Connection, Buy Cycle Insight and Content Needs. Each section should be written in the first person perspective of the persona, except for content needs.
     For each journey map, provide specific and creative content recommendations for each stage.
     For example: 'For the Awareness stage of the Technical User, recommend a blog post titled "5 Signs Your Current Data Pipeline is Inefficient."'
-    Or 'For the Decision stage of the Financial Buyer, recommend a "Customizable ROI Calculator."'
+    Or 'For the Decision stage of the Financial Buyer, recommend a "Customizable ROI Calculator."' 
   expected_output: >
     A client-ready, polished Markdown report saved to 'buyer_persona_and_journey_report.md'.
     The report must contain:
     1. An Executive Summary.
-    2. A detailed section for each Buyer Persona.
-    3. A section for each Buyer Journey Map, complete with actionable content recommendations for every stage.
+    2. A detailed section for each Buyer Persona which contains:
+      -Core Persona Information: (For each section include multiple bullet points, written in the first person perspective of the persona)
+        -Title/Role: What is the title or role of the persona? What is their industry?
+        -Media Habits: How does the persona consume information?
+        -Sources of Influence: Who are the influencers that the persona trusts?
+        -Preferred Communication Tactics: How does the persona prefer to be reached?
+        -Preffered Content Types: What types of content does the persona prefer?
+        -How to Get My Attention: What are the persona's pain points?
+        -How to Earn a Sales Visit: What are the persona's goals?
+      -Product/Persona Connection: (For each section include multiple bullet points, written in the first person perspective of the persona)
+        -Priority Initiatives: What are the persona's top priorities?
+        -Success Factors: What are the persona's success factors?
+        -Perceived Barriers: What are the persona's perceived barriers?
+        -Decision Criteria: What are the persona's decision criteria?
+        -Buyer's Journey: What is the persona's buyer's journey?
+      -Buy Cycle Insights: (phrase each of these as a question, written in the first person perspective of the persona)
+        -Eductation Phase: What are the persona's pain points?
+        -Solution Phase: What are the persona's goals?
+        -Vendor Selection Phase: What are the persona's decision criteria?
+      -Content Needs:
+        -Focus/Theme/Medium: What is the content focus, theme, and medium?
+        -Format: What is the content format?
+        -Purpose: What is the content purpose?
   agent: writer
   output_file: buyer_persona_and_journey_report.md

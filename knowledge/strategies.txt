@@ -1,0 +1,39 @@
+Buyer Persona Process Overview:
+
+The 5 Rings of Insight:
+
+1. Priority Initiatives: or the the real challenges your buyers are looking to solve. 
+What causes certain buyers to invest in solutions like yours, and what is different about buyers who are satisfied with the status quo?
+
+2. Success Factors: or the organizational and personal results buyers expect to achieve
+What operational or personal results does your buyer persona expect to achieve by purchasing this solution?
+
+3. Perceived Barriers: or the concerns and road blocks that may prevent a buyer from choosing your solution or company
+What concerns cause your buyer to believe that your solution or company is not their best option?
+
+4. The Buyer's Journey: or the typical steps your buyer takes in the evaluation and selection process 
+This insight reveals details about the steps your buyer takes to evaluate their options and select one.
+
+5. Decision Criteria: or the factors buyers consider when making a purchase decision
+Which aspects of the competing products, services, solutions or company does your buyer perceive as most critical, and what are their expectations for each?
+
+
+The Persona Process:
+
+1. Gathering Data
+    - Historical sales data and lost orders reports
+    - Purchased lists of prospects
+    - Customer Service Records
+
+2. Stackeholder Collaboration
+    - Define emerging markets
+    - Understand the insights needed
+    - Integrate with the sales process
+
+3. Listening
+    - Phone calls with curernt customers, lost customers, and prospects
+    - In-depth conversations with experts across target Industries
+    -Online quantitative surveys
+
+4. Insights
+    - Distillation of actionable insights based on a comprehensive understanding of your business
