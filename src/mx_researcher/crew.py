@@ -2,9 +2,12 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
+
+from crewai import LLM
+
 from dotenv import load_dotenv
 load_dotenv()
-from langchain_openai import ChatOpenAI
+
 from crewai_tools import (
     SerperDevTool
 )
@@ -16,12 +19,18 @@ import os
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 
-
-llm = ChatOpenAI(
-    model=os.getenv('MODEL'),
-    api_key=os.getenv('OPENAI_API_KEY'),
+openai_llm = LLM(
+    model="openai/gpt-4o",
     temperature=0.7,
-    max_completion_tokens=15000
+    max_tokens=15000,
+    api_key=os.getenv('OPENAI_API_KEY')
+)
+
+google_llm = LLM(
+    model="gemini/gemini-2.5-pro-preview-05-06",
+    api_key=os.getenv('GEMINI_API_KEY'),
+    temperature=0.7,
+    max_tokens=15000
 )
 
 search_tool = SerperDevTool()
@@ -57,7 +66,7 @@ class MxResearcher():
             config=self.agents_config['planner'], # type: ignore[index]
             tools=[search_tool],
             verbose=True,
-            llm=llm,
+            llm=google_llm,
             knowledge_sources=[specialist_knowledge]
         )
 
@@ -68,7 +77,7 @@ class MxResearcher():
             config=self.agents_config['researcher'], # type: ignore[index]
             tools=[search_tool],
             verbose=True,
-            llm=llm,
+            llm=google_llm,
             knowledge_sources=[strategy_knowledge]
         )
 
@@ -77,7 +86,7 @@ class MxResearcher():
         return Agent(
             config=self.agents_config['synthesizer'], # type: ignore[index]
             verbose=True,
-            llm=llm,
+            llm=google_llm,
             knowledge_sources=[strategy_knowledge]
         )
 
@@ -86,7 +95,7 @@ class MxResearcher():
         return Agent(
             config=self.agents_config['writer'], # type: ignore[index]
             verbose=True,
-            llm=llm    
+            llm=google_llm    
         )
 
     # To learn more about structured task outputs,
