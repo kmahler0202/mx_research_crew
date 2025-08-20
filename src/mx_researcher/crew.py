@@ -9,7 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from crewai_tools import (
-    SerperDevTool
+    SerperDevTool,
+    ScrapeWebsiteTool,
+    WebsiteSearchTool
 )
 from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 import os
@@ -33,7 +35,23 @@ google_llm = LLM(
     max_tokens=15000
 )
 
+researcher_llm = LLM(
+    model="anthropic/claude-sonnet-4-20250514",
+    api_key=os.getenv('ANTHROPIC_API_KEY'),
+    temperature=0.7,
+    max_tokens=15000
+)
+
+synthesizer_llm = LLM(
+    model="anthropic/claude-opus-4-20250514",
+    api_key=os.getenv('ANTHROPIC_API_KEY'),
+    temperature=0.7,
+    max_tokens=15000
+)
+
 search_tool = SerperDevTool()
+scrape_website_tool = ScrapeWebsiteTool()
+website_search_tool = WebsiteSearchTool()
 
 specialist_knowledge = TextFileKnowledgeSource(
     file_paths=['graymatter_knowledge.txt']
@@ -67,7 +85,7 @@ class MxResearcher():
             tools=[search_tool],
             verbose=True,
             llm=google_llm,
-            knowledge_sources=[specialist_knowledge]
+            knowledge_sources=[specialist_knowledge, strategy_knowledge]
         )
 
     
@@ -75,7 +93,7 @@ class MxResearcher():
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], # type: ignore[index]
-            tools=[search_tool],
+            tools=[search_tool, scrape_website_tool, website_search_tool],
             verbose=True,
             llm=google_llm,
             knowledge_sources=[strategy_knowledge]

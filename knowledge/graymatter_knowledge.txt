@@ -1,5 +1,6 @@
+GrayMatter Knowledge:
 Products/Services:
--Industrial and Process Automation Services
+-Industrial and Process Automation Services, 
 -Plant Automation Systems Integration
 -Plant floor to C-suite data Integration
 
@@ -17,10 +18,5 @@ Decision Makers and Decision Influencers:
 -Director of Plant Engineering
 -Plant or Systems Engineering
 -Chief Technology Officer
-
-Watering Holes:
-- Major Trade Associations
-- Shows
-- Websites
-- Conferences
-- LinkedIn Groups
+-Chief Financial Officer
+-Chief Operating Officer

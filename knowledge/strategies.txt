@@ -16,24 +16,3 @@ This insight reveals details about the steps your buyer takes to evaluate their 
 
 5. Decision Criteria: or the factors buyers consider when making a purchase decision
 Which aspects of the competing products, services, solutions or company does your buyer perceive as most critical, and what are their expectations for each?
-
-
-The Persona Process:
-
-1. Gathering Data
-    - Historical sales data and lost orders reports
-    - Purchased lists of prospects
-    - Customer Service Records
-
-2. Stackeholder Collaboration
-    - Define emerging markets
-    - Understand the insights needed
-    - Integrate with the sales process
-
-3. Listening
-    - Phone calls with curernt customers, lost customers, and prospects
-    - In-depth conversations with experts across target Industries
-    -Online quantitative surveys
-
-4. Insights
-    - Distillation of actionable insights based on a comprehensive understanding of your business

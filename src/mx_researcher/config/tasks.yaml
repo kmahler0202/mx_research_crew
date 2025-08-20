@@ -1,24 +1,20 @@
 planning_task:
   description: >
-    Determine which industries and market segments are most likely to buy this product for the company {company}. Within each industry and market segment,
-    what decision makers and decision influencers, most likely defined by Title or Role, are most significant in the buying process for this product.
-    Determine this by visiting the company’s website, as well as the competitors websites, and determine if they have pre-existing industries and personas defined, and if so, documenting those,
-    in addition look at any trade associations and trade conferences to try and understand if they break out different industries and roles and titles, as well as look at LinkedIn Groups that are specific to the product or the product category.
+    For {company}, use the provided knowledge on product offering, industries served, typical titles of decision makers and decision influencers, and sources of thought leadership and professional connection, as a starting point to develop a more fully developed view of the buyer ecosystem and the end-to-end process of buying the company’s services. Use that starting point to expand the view of the buyer ecosystem based on what else you find.
   expected_output: >
-    A matrix that has industries on one axis and decision makers and decision influencers on the other axis. Additionally, make a list of questions that may not fit into this matrix but you still feel are important.
+    A plan for the researcher to explore not just what has been provided in the knowledge info, but also to expand upon that knowledge to highlight any significant differences between industries and market segments that might exist.
   agent: planner
 
 research_task:
   description: >
-    Choose three of the decision-maker roles identified in the planner's output matrix, conduct comprehensive, qualitative research for {company}. The three you choose should each be in different industries
-    Your goal is to deeply understand their professional profile, priorities, and buying behavior.
+    For each member of the buyer ecosystem identified, your goal is to deeply understand their professional profile, priorities, and buying behavior.
 
     For each role, research:
     - **Core Responsibilities & Professional Goals**: What outcomes are they responsible for?
     - **Pain Points & Challenges**: What obstacles make their job harder?
     - **Decision Criteria**: What factors do they evaluate when considering a solution?
     - **Perceived Barriers**: What would prevent them from choosing a product like {company}'s?
-    - **Media Habits**: How and where do they consume information? (social media, blogs, podcasts, etc.)
+    - **Media Habits**: How and where do they consume information? (trade publications, professional associations, social media, blogs, podcasts, etc.)
     - **Sources of Influence**: Which influencers, peers, analysts, or publications shape their thinking?
     - **Preferred Communication Methods**: Email, calls, LinkedIn, in-person, etc.
     - **Preferred Content Types**: Blogs, whitepapers, videos, webinars, calculators, etc.
@@ -28,8 +24,8 @@ research_task:
         - Decision: How do they finalize a choice?
     - **Watering Holes**: Blogs, forums, or industry-specific resources they trust.
 
-    Use credible sources such as LinkedIn, industry reports, conference agendas, Reddit, product review sites, and trade association content.
     Always include at least 2 direct quotes per persona from credible sources, with full URLs.
+
   expected_output: >
     A structured dossier for each decision-maker profile, containing:
 

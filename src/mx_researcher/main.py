@@ -34,8 +34,8 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "Wisetail",
-        'company': 'Wisetail',
+        "topic": "GrayMatter Systems",
+        'company': 'GrayMatter Systems',
         'current_year': str(datetime.now().year)
     }
     try:
@@ -59,7 +59,7 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "topic": "Wisetail",
+        "topic": "GrayMatter Systems",
         "current_year": str(datetime.now().year)
     }
     
