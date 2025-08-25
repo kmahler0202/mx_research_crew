@@ -85,7 +85,7 @@ class MxResearcher():
             tools=[search_tool],
             verbose=True,
             llm=google_llm,
-            knowledge_sources=[specialist_knowledge, strategy_knowledge]
+            knowledge_sources=[specialist_knowledge]
         )
 
     
@@ -96,7 +96,7 @@ class MxResearcher():
             tools=[search_tool, scrape_website_tool, website_search_tool],
             verbose=True,
             llm=google_llm,
-            knowledge_sources=[strategy_knowledge]
+            knowledge_sources=[specialist_knowledge]
         )
 
     @agent
